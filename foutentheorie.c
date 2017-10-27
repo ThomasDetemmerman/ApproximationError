@@ -42,19 +42,47 @@ int main()
 
     switch(operator)
         case '+': res = sumUp(a,b);
+        case '-': res = substract(a,b);
+        case '*': res = multipy(a,b);
+        case '/' case ':' : res = devide(a,b);
         
    
     print_record(&res);
     return 0;
 }
 
-/* calculation formulas */
+/* core calculations foutentheorie */
  record sumUp(record a, record b){
      double af = sqrt(pow(a.af,2) + pow(b.af,2));
      double waarde = a.waarde + b.waarde;
      record r =  createRecord(waarde, af);
      return r;
  }
+
+
+ record substract(record a, record b){
+     double af = sqrt(pow(a.af,2) + pow(b.af,2));
+     double waarde = a.waarde - b.waarde;
+     record r =  createRecord(waarde, af);
+     return r;
+ }
+
+ record multipy(record a, record b){
+    double rf = sqrt(pow(a.rf,2) + pow(b.rf,2));
+    double waarde = a.waarde * b.waarde;
+    double newaf = waarde * af;
+    record r = {waarde, newaf};
+    record r;
+}
+
+record devide(record a, record b){
+    double rf = sqrt(pow(a.rf,2) + pow(b.rf,2));
+    double waarde = a.waarde / b.waarde;
+    double newaf = waarde * af;
+    record r = {waarde, newaf};
+    record r;
+}
+
 
 
 /** formating and converting furnctions */
