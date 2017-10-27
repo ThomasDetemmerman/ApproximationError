@@ -14,8 +14,13 @@ double convertToTwoBC(double, int);
 void printDoubleWithBC(double, int);
 int findAmountOfNumbersAfterKomma(double);
 record sumUp(record, record);
+record devide(record, record);
+record multipy(record, record);
+record substract(record, record);
+
 record createRecord(double, double);
 double calculateRF(double, double);
+
 
 void print_record(const record *);
 
@@ -40,12 +45,13 @@ int main()
     record res;
    
 
-    switch(operator)
-        case '+': res = sumUp(a,b);
-        case '-': res = substract(a,b);
-        case '*': res = multipy(a,b);
-        case '/' case ':' : res = devide(a,b);
-        
+    switch(operator){
+        case '+': res = sumUp(a,b); break;
+        case '-': res = substract(a,b); break;
+        case '*': res = multipy(a,b); break;
+        case '/': case ':' : res = devide(a,b); break;
+        default: printf("invalid operator, please enter + - / *");
+    }
    
     print_record(&res);
     return 0;
@@ -70,17 +76,17 @@ int main()
  record multipy(record a, record b){
     double rf = sqrt(pow(a.rf,2) + pow(b.rf,2));
     double waarde = a.waarde * b.waarde;
-    double newaf = waarde * af;
+    double newaf = waarde * rf;
     record r = {waarde, newaf};
-    record r;
+    return r;
 }
 
 record devide(record a, record b){
     double rf = sqrt(pow(a.rf,2) + pow(b.rf,2));
     double waarde = a.waarde / b.waarde;
-    double newaf = waarde * af;
+    double newaf = waarde * rf;
     record r = {waarde, newaf};
-    record r;
+    return r;
 }
 
 
